@@ -1,12 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const ownerController = require("../controllers/owner-controller");
 
-router.get("/", (req, res)=>{
-  res.send("owner route")
-})
-
-router.post("/register", async (req, res) => {
-  res.status(200).json({message: "owner created"})
-})
+router.post("/register", ownerController.registerOwner)
 
 module.exports = router;
